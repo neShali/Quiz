@@ -11,8 +11,6 @@ function App(): JSX.Element {
       <Route path="/login" element={<Login />}/>
       <Route />
       <Route />
-      <Route />
-      <Route />
     </Route>
 </Routes>
   );

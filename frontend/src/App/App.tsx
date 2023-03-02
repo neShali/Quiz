@@ -7,6 +7,7 @@ import Themes from '../features/themes/Themes';
 
 function App(): JSX.Element {
   return (
+
     <Routes>
       <Route element={<Layout />}>
         <Route path="/login" element={<Login />} />
@@ -16,6 +17,7 @@ function App(): JSX.Element {
         <Route />
       </Route>
     </Routes>
+
   );
 }
 

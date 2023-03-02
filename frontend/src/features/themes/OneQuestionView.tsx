@@ -1,20 +1,29 @@
 import { Typography, Box, Button, Modal } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function OneQuestionView(): JSX.Element {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [disable, setDisable] = useState(false);
+
   const handleOpen = (): void => setOpen(true);
-  const handleClose = (): void => setOpen(false);
+  const handleClose = (): void => {
+    setOpen(false);
+    setDisable(true);
+  };
 
   return (
     <div>
-      <Button size="large" variant="outlined" onClick={handleOpen}>
+      <Button
+        size="large"
+        variant="outlined"
+        onClick={handleOpen}
+        disabled={disable}
+      >
         200
       </Button>
 
       {open ? (
         <div>
-          <Button onClick={handleOpen} />
           <Modal
             open={open}
             onClose={handleClose}

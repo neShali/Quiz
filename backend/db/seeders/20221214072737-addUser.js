@@ -5,13 +5,19 @@ module.exports = {
   async up() {
     await User.bulkCreate([
       {
-        name: 'Vasya',
+        name: 'John Doe',
+        email: 'J@D.com',
+        password: '12345678',
       },
       {
-        name: 'Petya',
+        name: 'John Lennon',
+        email: 'Yoko@mylove@com',
+        password: '12345678',
       },
       {
-        name: 'Ivan',
+        name: 'John Snow',
+        email: 'i@dontnothing.com',
+        password: '12345678',
       },
     ]);
   },

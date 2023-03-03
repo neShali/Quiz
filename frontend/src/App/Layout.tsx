@@ -21,6 +21,12 @@ const dispatch = useDispatch();
     navigate('/login');
   };
 
+
+  const handlerStatistics = (): void => {
+    navigate('/static');
+  };
+
+
   const handlerLogout = (): void => {
     api.logout().then(() => {
       dispatch(logoutSuccess());
@@ -32,14 +38,27 @@ const handlerRegistration = (): void => {
     navigate('/registration')
 };
 
+
   return (
     <div>
-      <Box sx={{ flexGrow: 1}}>
-        <AppBar position="static" sx={{ flexGrow: 1, backgroundColor: '#8e24aa',}}>
-            {/* backgroundColor: '#8e24aa', height: '100px', }}> */}
-          <Toolbar sx={{height: '100px',}}>
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar
+          position="static"
+          sx={{ flexGrow: 1, backgroundColor: '#8e24aa' }}
+        >
+          {/* backgroundColor: '#8e24aa', height: '100px', }}> */}
+          <Toolbar sx={{ height: '100px' }}>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              <Link style={{ color: 'white', fontSize: 50, textShadow: '3px 3px 3px gray', textDecorationLine: 'none', letterSpacing: '5px' }} to="/">
+              <Link
+                style={{
+                  color: 'white',
+                  fontSize: 50,
+                  textShadow: '3px 3px 3px gray',
+                  textDecorationLine: 'none',
+                  letterSpacing: '5px',
+                }}
+                to="/"
+              >
                 Квиз
               </Link>
 
@@ -48,6 +67,7 @@ const handlerRegistration = (): void => {
               </span>
             </Typography>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+
                 {user && `Ваш счёт: ${score}`}
                 {user && <Link style={{ color: 'white', margin: 10 }} to="/static">
                 Статистика
@@ -66,6 +86,7 @@ const handlerRegistration = (): void => {
              </Button>
             </>
                }
+
           </Toolbar>
         </AppBar>
       </Box>

@@ -7,6 +7,7 @@ import { RootState } from '../../store';
 import * as themesApi from './api';
 import type Theme from './types/Theme';
 import Question from './types/Question';
+import * as pointsApi from '../static/apiStatic';
 
 function Themes(): JSX.Element {
   const themes = useSelector((state: RootState) => state.themes.themesList);
@@ -16,8 +17,11 @@ function Themes(): JSX.Element {
   const navigate = useNavigate();
 
   const handleCloseGame = (): void => {
-    console.log(points);
-    navigate('/');
+    pointsApi
+      .addStaticUsers(points)
+      .then((p) => dispatch({ type: 'static/addStaticUser', payload: p }));
+
+    navigate('/static');
   };
 
   useEffect(() => {
@@ -42,10 +46,16 @@ function Themes(): JSX.Element {
             gutterBottom
             variant="h5"
             component="div"
-            sx={{ fontSize: 48, color: 'violet', fontWeight: 'bold', textAlign: 'center', verticalAlign: 'center', margin: '0px 10px 0px 0px' }}
+            sx={{
+              fontSize: 48,
+              color: 'violet',
+              fontWeight: 'bold',
+              textAlign: 'center',
+              verticalAlign: 'center',
+              margin: '0px 10px 0px 0px',
+            }}
           >
             {theme.title}
-
           </Typography>
           {theme.questions.map(
             (el: Question): JSX.Element => (
@@ -54,7 +64,14 @@ function Themes(): JSX.Element {
           )}
         </Grid>
       ))}
-      <Button type="button" color="error" onClick={handleCloseGame}>
+      <Button
+        type="button"
+        size="large"
+        variant="outlined"
+        color="secondary"
+        onClick={handleCloseGame}
+        style={{ marginBottom: '100px' }}
+      >
         Закончить игру
       </Button>
     </Grid>

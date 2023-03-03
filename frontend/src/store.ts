@@ -23,8 +23,7 @@ const store = createStore(
     // значение - сам редьюсер
     login: loginReducer,
     themes: themesReducer,
-    static: reducerStatic
-
+    static: reducerStatic,
   }),
   composeWithDevTools(),
 );

@@ -30,15 +30,12 @@ export default function OneQuestionView({
       payload: { id: Number(question.id), themeId: Number(question.theme_id) },
     });
   };
-  // console.log(question.answered);
 
   const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = (
     event,
   ) => {
     setInput(event.target.value);
   };
-
-  console.log(question);
 
   const handlerAnswer: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
@@ -63,10 +60,8 @@ export default function OneQuestionView({
   return (
     <div>
       <Button
-        // size="large"
         variant="outlined"
         onClick={handleOpen}
-        // disabled={disable}
         disabled={question.answered}
         color="secondary"
         sx={{
@@ -77,7 +72,6 @@ export default function OneQuestionView({
           fontWeight: 'bold',
           letterSpacing: '2px',
           border: '3px #9c27b0 solid',
-
         }}
       >
         {question.points}

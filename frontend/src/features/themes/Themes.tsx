@@ -31,7 +31,6 @@ function Themes(): JSX.Element {
   }, [dispatch]);
 
   return (
-
     <div
       style={{
         marginTop: '50px',
@@ -81,6 +80,7 @@ function Themes(): JSX.Element {
             )}
           </Grid>
         ))}
+
               <Button
         type="button"
         size="large"
@@ -91,9 +91,9 @@ function Themes(): JSX.Element {
       >
         Закончить игру
       </Button>
+
       </Grid>
     </div>
-
   );
 }
 

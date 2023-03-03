@@ -19,7 +19,6 @@ router.post('/add-scores', async (req, res) => {
     include: { model: Point, key: 'user_id' },
     raw: true,
   });
-  // console.log('на бэке', newScore, users);
   res.json(users);
 });
 

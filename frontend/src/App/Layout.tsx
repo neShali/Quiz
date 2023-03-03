@@ -6,18 +6,31 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 import { Link, Outlet, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store';
+import * as api from '../features/login/loginApi'
+import { logoutSuccess } from '../features/login/actionsCreators';
 
 function Layout(): JSX.Element {
   const score = useSelector((state: RootState) => state.themes.score);
   const user = useSelector((state: RootState) => state.login.user);
-
+const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handlerLogin = (): void => {
     navigate('/login');
   };
+
+  const handlerLogout = (): void => {
+    api.logout().then(() => {
+      dispatch(logoutSuccess());
+      navigate('/')
+    })
+  };
+
+const handlerRegistration = (): void => {
+    navigate('/registration')
+};
 
   return (
     <div>
@@ -42,9 +55,19 @@ function Layout(): JSX.Element {
               </Link>
 
             </Typography>
-            <Button color="inherit" onClick={handlerLogin} sx={{ fontSize: 24, textShadow: '2px 2px 2px gray' }}>
-              Login
-            </Button>
+              {user ? 
+              <Button color="inherit" onClick={handlerLogout} sx={{ fontSize: 24, textShadow: '2px 2px 2px gray' }}>
+              Выйти
+             </Button> :
+             <>
+             <Button color="inherit" onClick={handlerLogin} sx={{ fontSize: 24, textShadow: '2px 2px 2px gray' }}>
+              Войти
+             </Button>
+             <Button color="inherit" onClick={handlerRegistration} sx={{ fontSize: 24, textShadow: '2px 2px 2px gray' }}>
+              Регистрация
+             </Button>
+            </>
+               }
           </Toolbar>
         </AppBar>
       </Box>

@@ -21,7 +21,7 @@ loginRouter.post('/login', async (req, res) => {
     } else { res.status(401).json({ error: 'Не правильные почта или пароль'}) 
     }
     } else {
-    res.status(401).json({ error: 'Такого пользователя не существует'})
+    res.status(401).json({ error: 'Заполните все поля'})
     }
 })
 

@@ -8,8 +8,6 @@ export const initialState: State = {
 };
 
 function reducer(state: State = initialState, action: Action): State {
-  console.log(action.payload);
-
   switch (action.type) {
     case 'themes/loadThemes':
       return {

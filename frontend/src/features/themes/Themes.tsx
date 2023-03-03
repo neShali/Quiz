@@ -31,7 +31,6 @@ function Themes(): JSX.Element {
   }, [dispatch]);
 
   return (
-
     <div
       style={{
         marginTop: '50px',
@@ -81,19 +80,18 @@ function Themes(): JSX.Element {
             )}
           </Grid>
         ))}
-              <Button
-        type="button"
-        size="large"
-        variant="outlined"
-        color="secondary"
-        onClick={handleCloseGame}
-        style={{ marginBottom: '100px' }}
-      >
-        Закончить игру
-      </Button>
+        <Button
+          type="button"
+          size="large"
+          variant="outlined"
+          color="secondary"
+          onClick={handleCloseGame}
+          style={{ marginBottom: '100px' }}
+        >
+          Закончить игру
+        </Button>
       </Grid>
     </div>
-
   );
 }
 

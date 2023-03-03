@@ -7,13 +7,16 @@ module.exports = {
   async up() {
     await Theme.bulkCreate([
       {
-        title: 'Мульти-пульти',
+        title: 'Кино',
       },
       {
-        title: 'Кино, вино и домино',
+        title: 'Обо всем',
       },
       {
-        title: 'Ранее в сериале...',
+        title: 'Для смекалки',
+      },
+      {
+        title: 'Хардкор',
       },
     ]);
   },

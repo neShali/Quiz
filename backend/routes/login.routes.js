@@ -42,4 +42,32 @@ loginRouter.post('/logout', (req, res) => {
   });
 });
 
+loginRouter.post('/registration', async (req, res) => {
+    const {
+        name, email, password1, password2,
+      } = req.body;
+      if (name && email && password1 && password1 === password2) {
+        const user = await User.findOne({ where: { email } });
+        if (!user) {
+          const hash = await bcrypt.hash(password1, 10);
+          const newUser = await User.create({ name, email, password: hash });
+          req.session.userId = newUser.id;
+          res.status(200).json({
+            id: newUser.id,
+            name: newUser.name,
+            email: newUser.email,
+          });
+        } else {
+          res.status(401).json({ message: 'Пользователь с таким email уже существует' });
+        }
+      } else if ((name && email && password1 && password1 !== password2)) {
+        res.status(401).json({ message: 'Пароли не совпадают' });
+      } else {
+        res.status(401).json({ message: 'Заполните все поля' });
+      }
+  });
+
+
+
+
 module.exports = loginRouter;

@@ -30,9 +30,15 @@
       url('../../public/fonts/Szlichta.woff') format('woff');
   }
 
-.table {
-    margin: 50px;
-    border: 1px solid black;
+  .table {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+td {
+    padding: 10px;
 }
 
 .login{

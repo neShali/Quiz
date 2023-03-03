@@ -3,30 +3,40 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { applyMiddleware } from "redux";
 import '../features.css'
+import { loginSuccess } from "./actionsCreators";
+import * as api from './loginApi'
 
 function Login (): JSX.Element {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-const [name, setName] = useState('')
+const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
 
 const handleNameChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
-  setName(event.target.value)
+  setEmail(event.target.value)
 }
 const handlePasswordChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
   setPassword(event.target.value);
 }
 
+const handleSubmit = (event: React.FormEvent): void => {
+  event.preventDefault();
+  api.login({email, password}).then((user) => {
+    dispatch(loginSuccess(user));
+    navigate('/')
+  })
+};
 
 
 return (
-<Form>
-      <Form.Group className="mb-3 mt-5 loginForm" controlId="formBasicEmail">
+<Form onSubmit={handleSubmit}>
+      <Form.Group  className="mb-3 mt-5 loginForm" controlId="formBasicEmail">
         <h2>Логин</h2>
-        <Form.Control type="text" value={name} onChange={handleNameChange} placeholder="Введите ваше имя" />
-        <Form.Control type="password" value={password} onChange={handlePasswordChange} placeholder="Введите ваше имя" />
+        <input type="email" value={email} onChange={handleNameChange} placeholder="Введите вашу почту" />
+        <input type="password" value={password} onChange={handlePasswordChange} placeholder="Введите ваш пароль" />
       <Button variant="primary mt-3" type="submit">
         Войти
       </Button>

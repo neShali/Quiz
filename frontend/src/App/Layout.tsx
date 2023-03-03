@@ -66,14 +66,14 @@ const handlerRegistration = (): void => {
               </Link>}
               </Typography>
               {user ? 
-              <Button color="inherit" onClick={handlerLogout} sx={{ fontSize: 24, textShadow: '2px 2px 2px gray' }}>
+              <Button color="inherit" onClick={handlerLogout} sx={{ fontSize: 30, fontFamily: 'Szlichta', textShadow: '2px 2px 2px gray', letterSpacing: '2px' }}>
               Выйти
              </Button> :
              <>
-             <Button color="inherit" onClick={handlerLogin} sx={{ fontSize: 24, textShadow: '2px 2px 2px gray' }}>
+             <Button color="inherit" onClick={handlerLogin} sx={{ fontSize: 30, fontFamily: 'Szlichta', textShadow: '2px 2px 2px gray', letterSpacing: '2px' }}>
               Войти
              </Button>
-             <Button color="inherit" onClick={handlerRegistration} sx={{ fontSize: 24, textShadow: '2px 2px 2px gray' }}>
+             <Button color="inherit" onClick={handlerRegistration} sx={{ fontSize: 30, fontFamily: 'Szlichta', textShadow: '2px 2px 2px gray', letterSpacing: '2px' }}>
               Регистрация
              </Button>
             </>

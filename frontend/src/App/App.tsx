@@ -16,7 +16,7 @@ function App(): JSX.Element {
   const dispatch = useDispatch();
   
   const authChecked = useSelector(selectAuthChecked)
-
+  
   useEffect(() => {
     loginApi.checkUser().then((result) => {
       dispatch(userChecked(result.isLoggedIn ? result.user : undefined));

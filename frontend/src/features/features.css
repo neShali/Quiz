@@ -17,6 +17,7 @@
     margin-top: 200px
 }
 
+
 .font-szlichta {
     font-family: "Szlichta";
   }
@@ -27,3 +28,8 @@
     src: url('../../public/fonts/Szlichta.ttf') format('ttf'),
       url('../../public/fonts/Szlichta.woff') format('woff');
   }
+
+.table {
+    margin: 50px;
+    border: 1px solid black;
+}

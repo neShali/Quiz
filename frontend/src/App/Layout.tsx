@@ -16,15 +16,16 @@ function Layout(): JSX.Element {
 
   return (
     <div>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-          <Toolbar>
+      <Box sx={{ flexGrow: 1}}>
+        <AppBar position="static" sx={{ flexGrow: 1, backgroundColor: '#8e24aa',}}>
+            {/* backgroundColor: '#8e24aa', height: '100px', }}> */}
+          <Toolbar sx={{height: '100px',}}>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              <Link style={{ color: 'white' }} to="/">
+              <Link style={{ color: 'white', fontSize: 50, textShadow: '3px 3px 3px gray', textDecorationLine: 'none', letterSpacing: '5px' }} to="/">
                 Квиз
               </Link>
             </Typography>
-            <Button color="inherit" onClick={handlerLogin}>
+            <Button color="inherit" onClick={handlerLogin} sx={{ fontSize: 24, textShadow: '2px 2px 2px gray' }}>
               Login
             </Button>
           </Toolbar>

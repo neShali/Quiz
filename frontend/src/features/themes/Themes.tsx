@@ -4,7 +4,7 @@ import OneQuestionView from './OneQuestionView';
 
 function Themes(): JSX.Element {
   const arr = ['1', '2', '3'];
-  const arrQ = ['вопрос', 'вопрос2'];
+  const arrQ = ['Тема 1', 'Тема 2'];
   return (
     <div>
       {arrQ.map((t) => (
@@ -16,7 +16,12 @@ function Themes(): JSX.Element {
           justifyContent="center"
           style={{ minHeight: '30vh' }}
         >
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            sx={{ fontSize: 48, color: 'violet', fontWeight: 'bold', textAlign: 'center', verticalAlign: 'center', margin: '0px 10px 0px 0px' }}
+          >
             {t}
           </Typography>
           {arr.map((el) => (

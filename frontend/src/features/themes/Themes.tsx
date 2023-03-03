@@ -1,15 +1,37 @@
-import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Grid, Typography, Button } from '@mui/material';
 import OneQuestionView from './OneQuestionView';
+import { RootState } from '../../store';
+import * as themesApi from './api';
+import type Theme from './types/Theme';
+import Question from './types/Question';
 
 function Themes(): JSX.Element {
-  const arr = ['1', '2', '3'];
-  const arrQ = ['Тема 1', 'Тема 2'];
+  const themes = useSelector((state: RootState) => state.themes.themesList);
+  const points = useSelector((state: RootState) => state.themes.score);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleCloseGame = (): void => {
+    console.log(points);
+    navigate('/');
+  };
+
+  useEffect(() => {
+    themesApi.loadThemes().then((t) => {
+      dispatch({ type: 'themes/loadThemes', payload: t });
+    });
+  }, [dispatch]);
+
   return (
-    <div>
-      {arrQ.map((t) => (
+    <Grid container alignItems="center" justifyContent="center">
+      {themes.map((theme: Theme) => (
         <Grid
           container
+          key={theme.id}
           spacing={0}
           direction="row"
           alignItems="center"
@@ -22,14 +44,20 @@ function Themes(): JSX.Element {
             component="div"
             sx={{ fontSize: 48, color: 'violet', fontWeight: 'bold', textAlign: 'center', verticalAlign: 'center', margin: '0px 10px 0px 0px' }}
           >
-            {t}
+            {theme.title}
+
           </Typography>
-          {arr.map((el) => (
-            <OneQuestionView />
-          ))}
+          {theme.questions.map(
+            (el: Question): JSX.Element => (
+              <OneQuestionView question={el} key={el.id} />
+            ),
+          )}
         </Grid>
       ))}
-    </div>
+      <Button type="button" color="error" onClick={handleCloseGame}>
+        Закончить игру
+      </Button>
+    </Grid>
   );
 }
 

@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { applyMiddleware } from "redux";
 import '../features.css'
 import { loginSuccess } from "./actionsCreators";
+
+
 import * as api from './loginApi'
 
 function Login (): JSX.Element {
@@ -34,7 +36,7 @@ const handleSubmit = (event: React.FormEvent): void => {
 return (
 <Form onSubmit={handleSubmit}>
       <Form.Group  className="mb-3 mt-5 loginForm" controlId="formBasicEmail">
-        <h2 className="login">Логин</h2>
+        <h2>Логин</h2>
         <input type="email" value={email} onChange={handleNameChange} placeholder="Введите вашу почту" />
         <input type="password" value={password} onChange={handlePasswordChange} placeholder="Введите ваш пароль" />
       <Button variant="secondary mt-3" type="submit">

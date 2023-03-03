@@ -1,7 +1,8 @@
-import type Theme from './Theme'
+import type Theme from './Theme';
 
 type State = {
-    themesList: Theme[];
+  themesList: Theme[];
+  score: number;
 };
 
 export default State;

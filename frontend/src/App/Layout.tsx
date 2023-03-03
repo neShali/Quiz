@@ -21,23 +21,23 @@ function Layout(): JSX.Element {
 
   return (
     <div>
-      <Box sx={{ flexGrow: 1}}>
+      <Box sx={{ flexGrow: 1, justifyContent: 'space-between' }}>
         <AppBar position="static" sx={{ flexGrow: 1, backgroundColor: '#8e24aa',}}>
             {/* backgroundColor: '#8e24aa', height: '100px', }}> */}
           <Toolbar sx={{height: '100px',}}>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              <Link style={{ color: 'white', fontSize: 50, textShadow: '3px 3px 3px gray', textDecorationLine: 'none', letterSpacing: '5px' }} to="/">
-                Квиз
+              <Link style={{ color: 'white', fontSize: 50, textShadow: '3px 3px 3px gray', textDecorationLine: 'none', letterSpacing: '5px',  }} to="/">
+                Квиз-з-з
               </Link>
 
               <span style={{ marginLeft: '50px' }}>
                 {user && `Привет, ${user.name}`}
               </span>
             </Typography>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontSize: 24, fontFamily: 'Szlichta', fontWeight: 'bold', }}>
               Ваш счёт: {score}
 
-              <Link style={{ color: 'white', margin: 10 }} to="/static">
+              <Link style={{ color: 'yellow', margin: 20, fontSize: 18, fontFamily: 'Szlichta', fontWeight: 'bold', textDecorationLine: 'none', letterSpacing: '2px'}} to="/static">
                 Статистика
               </Link>
 

@@ -56,14 +56,22 @@ export default function OneQuestionView({
   return (
     <div>
       <Button
-        size="large"
+        // size="large"
         variant="outlined"
         onClick={handleOpen}
         disabled={disable}
         color="secondary"
+        sx={{
+          fontSize: 40,
+          fontFamily: 'Szlichta',
+          // width: '150px',
+          // height: '150px',
+          fontWeight: 'bold',
+          letterSpacing: '2px',
+          border: '3px #9c27b0 solid',
+        }}
       >
         {question.points}
-
       </Button>
 
       <div>
@@ -82,26 +90,54 @@ export default function OneQuestionView({
               transform: 'translate(-50%, -50%)',
               width: 400,
               bgcolor: 'background.paper',
-                // border: '2px solid #000',
-                boxShadow: 24,
-                p: 4,
-                backgroundColor: '#9c27b0',
-                textAlign: 'center',
-                color: 'white'
+              // border: '2px solid #000',
+              boxShadow: 24,
+              p: 4,
+              backgroundColor: '#9c27b0',
+              textAlign: 'center',
+              color: 'white',
             }}
           >
-            <Typography id="modal-modal-title" variant="h6" component="h2" sx={{ fontSize: 36, fontFamily: 'Szlichta', }}>
+            <Typography
+              id="modal-modal-title"
+              variant="h6"
+              component="h2"
+              sx={{
+                fontSize: 36,
+                fontFamily: 'Szlichta',
+                margin: '5px 0px 10px 0px',
+              }}
+            >
               {question.question}
             </Typography>
             {answerShow ? (
-                <Typography id="modal-modal-description" sx={{ mt: 2, fontSize: 22, fontFamily: 'Szlichta'}}>
+              <Typography
+                id="modal-modal-description"
+                sx={{
+                  mt: 2,
+                  fontSize: 30,
+                  fontFamily: 'Szlichta',
+                  color: 'yellow',
+                }}
+              >
                 {answer}
-
               </Typography>
             ) : (
               <form onSubmit={handlerAnswer}>
                 <input value={inputText} onChange={handleInputChange} />
-                <Button type="submit" color="error">
+                <Button
+                  type="submit"
+                  sx={{
+                    mt: 2,
+                    fontSize: 22,
+                    fontFamily: 'Szlichta',
+                    color: 'yellow',
+                    fontWeight: 'bold',
+                    letterSpacing: '2px',
+                    // margin: '10px 0px 5px 5px',
+                    margin: '0px',
+                  }}
+                >
                   Узнать ответ
                 </Button>
               </form>

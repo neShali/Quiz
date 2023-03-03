@@ -4,7 +4,8 @@
 
 .loginForm {
     width: 300px;
-    margin: auto;
+    /* margin: auto; */
+    margin: 50px auto ;
 }
 
 .info {
@@ -32,4 +33,10 @@
 .table {
     margin: 50px;
     border: 1px solid black;
+}
+
+.login{
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
 }

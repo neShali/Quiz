@@ -1,3 +1,8 @@
+body {
+  background-color: black;
+  height: auto;
+}
+
 .App {
   text-align: center;
 }
@@ -40,5 +45,3 @@
     transform: skew(0deg) translateX(-200px);
   }
 }
-
-

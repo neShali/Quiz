@@ -36,10 +36,13 @@ const handleSubmit = (event: React.FormEvent): void => {
 return (
 <Form onSubmit={handleSubmit}>
       <Form.Group  className="mb-3 mt-5 loginForm" controlId="formBasicEmail">
-        <h2>Логин</h2>
+        <h2 className="login">Логин</h2>
         <input type="email" value={email} onChange={handleNameChange} placeholder="Введите вашу почту" />
         <input type="password" value={password} onChange={handlePasswordChange} placeholder="Введите ваш пароль" />
-      <Button variant="secondary mt-3" type="submit">
+      
+      <br />
+      
+      <Button variant="secondary mt-3" type="submit" className="log_in">
         Войти
       </Button>
       </Form.Group>

@@ -12,6 +12,7 @@ import * as pointsApi from '../static/apiStatic';
 function Themes(): JSX.Element {
   const themes = useSelector((state: RootState) => state.themes.themesList);
   const points = useSelector((state: RootState) => state.themes.score);
+    const user = useSelector((state: RootState) => state.login.user);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -36,13 +37,14 @@ function Themes(): JSX.Element {
       style={{
         marginTop: '50px',
       }}
-    >
+    >   {user? 
       <Grid
         container
         alignItems="stretch"
         justifyContent="center"
         sx={{ backgroundColor: '#282828' }}
       >
+        
         {themes.map((theme: Theme) => (
           <Grid
             container
@@ -92,6 +94,12 @@ function Themes(): JSX.Element {
         Закончить игру
       </Button>
       </Grid>
+      : <Grid
+      container
+      alignItems="stretch"
+      justifyContent="center"
+      sx={{ backgroundColor: '#282828', fontSize: '60px', color: 'white' }}
+    > Войдите или зарегистрируйтесь!</Grid> }
     </div>
 
   );

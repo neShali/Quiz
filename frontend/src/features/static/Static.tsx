@@ -1,28 +1,32 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
+import "../features.css"
 
 function Static(): JSX.Element {   
 
-  const users = useSelector((state: RootState) => state.static.usersList);
+  const users = useSelector((state: RootState) => state.static.usersList.sort((a, b) => b['Points.score'] - a['Points.score']));
 
-//    console.log(users);
 
   return (
-    <table className="table">
-        <thead>
-          <tr>
-            <th scope="col">Имя пользователя:</th>
-            <th scope="col">Счёт:</th>
-          </tr>
-        </thead>
-        <tbody>
-            <tr>
-              <td>1111</td>
-              <td>2222</td>
-            </tr>
-        </tbody>
-      </table>
+    <div className="table">
+     <table >
+     <thead style={{width: 100}}>
+      <tr>
+        <th>Имя игрока:</th>
+        <th>Счёт:</th>
+      </tr>
+    </thead>
+    <tbody>
+     {users.map((user)=> 
+      <tr key={user.id}>
+      <td>{user.name}</td>
+      <td>{user['Points.score']}</td>
+      </tr>
+    )}
+    </tbody>
+    </table>
+    </div>
   )
 }
 

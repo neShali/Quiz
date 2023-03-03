@@ -21,6 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  /* font-size: 40px; */
   color: white;
 }
 
@@ -38,4 +39,9 @@
   100% {
     transform: skew(0deg) translateX(-200px);
   }
+}
+
+@font-face {
+  font-family: "M PLUS Rounded";
+  src: url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
 }

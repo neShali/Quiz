@@ -8,7 +8,7 @@ export default function OneQuestionView(): JSX.Element {
 
   return (
     <div>
-      <Button size="large" variant="outlined" onClick={handleOpen}>
+      <Button size="large" variant="outlined" color="secondary" onClick={handleOpen}>
         200
       </Button>
 
@@ -33,14 +33,15 @@ export default function OneQuestionView(): JSX.Element {
                 border: '2px solid #000',
                 boxShadow: 24,
                 p: 4,
-                backgroundColor: 'pink',
+                backgroundColor: 'violet',
+                textAlign: 'center'
               }}
             >
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                вопрос
+              <Typography id="modal-modal-title" variant="h6" component="h2" sx={{ fontSize: 36, }}>
+                Вопрос
               </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                ответ
+              <Typography id="modal-modal-description" sx={{ mt: 2, fontSize: 22, }}>
+                Ответ
               </Typography>
             </Box>
           </Modal>

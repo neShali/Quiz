@@ -4,7 +4,7 @@ import OneQuestionView from './OneQuestionView';
 
 function Themes(): JSX.Element {
   const arr = ['1', '2', '3'];
-  const arrQ = ['вопрос', 'вопрос2'];
+  const arrQ = ['Тема 1', 'Тема 2'];
   return (
     <div>
       {arrQ.map((t) => (

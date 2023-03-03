@@ -37,7 +37,7 @@ return (
         <h2>Логин</h2>
         <input type="email" value={email} onChange={handleNameChange} placeholder="Введите вашу почту" />
         <input type="password" value={password} onChange={handlePasswordChange} placeholder="Введите ваш пароль" />
-      <Button variant="primary mt-3" type="submit">
+      <Button variant="secondary mt-3" type="submit">
         Войти
       </Button>
       </Form.Group>

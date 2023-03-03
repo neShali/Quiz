@@ -21,6 +21,12 @@ const dispatch = useDispatch();
     navigate('/login');
   };
 
+
+  const handlerStatistics = (): void => {
+    navigate('/static');
+  };
+
+
   const handlerLogout = (): void => {
     api.logout().then(() => {
       dispatch(logoutSuccess());
@@ -32,8 +38,10 @@ const handlerRegistration = (): void => {
     navigate('/registration')
 };
 
+
   return (
     <div>
+
       <Box sx={{ flexGrow: 1, justifyContent: 'space-between' }}>
         <AppBar position="static" sx={{ flexGrow: 1, backgroundColor: '#8e24aa',}}>
             {/* backgroundColor: '#8e24aa', height: '100px', }}> */}
@@ -41,20 +49,22 @@ const handlerRegistration = (): void => {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               <Link style={{ color: 'white', fontSize: 50, textShadow: '3px 3px 3px gray', textDecorationLine: 'none', letterSpacing: '5px',  }} to="/">
                 Квиз-з-з
+
+
               </Link>
 
               <span style={{ marginLeft: '50px' }}>
-                {user && `Привет, ${user.name}`}
+                {user && `Привет, ${user.name.replace(user.name[0], user.name[0].toUpperCase())}`}
               </span>
             </Typography>
+
             <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontSize: 24, fontFamily: 'Szlichta', fontWeight: 'bold', }}>
-              Ваш счёт: {score}
 
-              <Link style={{ color: 'yellow', margin: 20, fontSize: 18, fontFamily: 'Szlichta', fontWeight: 'bold', textDecorationLine: 'none', letterSpacing: '2px'}} to="/static">
+                {user && `Ваш счёт: ${score}`}
+                {user && <Link style={{ color: 'yellow', margin: 20, fontSize: 18, fontFamily: 'Szlichta', fontWeight: 'bold', textDecorationLine: 'none', letterSpacing: '2px'}} to="/static">
                 Статистика
-              </Link>
-
-            </Typography>
+              </Link>}
+              </Typography>
               {user ? 
               <Button color="inherit" onClick={handlerLogout} sx={{ fontSize: 24, textShadow: '2px 2px 2px gray' }}>
               Выйти
@@ -68,6 +78,7 @@ const handlerRegistration = (): void => {
              </Button>
             </>
                }
+
           </Toolbar>
         </AppBar>
       </Box>

@@ -24,14 +24,21 @@ export default function OneQuestionView({
   const handleOpen = (): void => setOpen(true);
   const handleClose = (): void => {
     setOpen(false);
-    setDisable(true);
+    // setDisable(true);
+    dispatch<Action>({
+      type: 'themes/changeQuestion',
+      payload: { id: Number(question.id), themeId: Number(question.theme_id) },
+    });
   };
+  // console.log(question.answered);
 
   const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = (
     event,
   ) => {
     setInput(event.target.value);
   };
+
+  console.log(question);
 
   const handlerAnswer: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
@@ -59,7 +66,8 @@ export default function OneQuestionView({
         // size="large"
         variant="outlined"
         onClick={handleOpen}
-        disabled={disable}
+        // disabled={disable}
+        disabled={question.answered}
         color="secondary"
         sx={{
           fontSize: 40,
@@ -69,6 +77,7 @@ export default function OneQuestionView({
           fontWeight: 'bold',
           letterSpacing: '2px',
           border: '3px #9c27b0 solid',
+
         }}
       >
         {question.points}
@@ -82,13 +91,18 @@ export default function OneQuestionView({
           aria-describedby="modal-modal-description"
         >
           <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
             sx={{
               // eslint-disable-next-line @typescript-eslint/prefer-as-const
               position: 'absolute' as 'absolute',
               top: '50%',
               left: '50%',
               transform: 'translate(-50%, -50%)',
-              width: 400,
+              width: 700,
+              height: 400,
               bgcolor: 'background.paper',
               // border: '2px solid #000',
               boxShadow: 24,

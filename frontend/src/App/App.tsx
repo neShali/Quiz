@@ -12,11 +12,12 @@ import { selectAuthChecked } from '../features/login/selectors';
 import { userChecked } from '../features/login/actionsCreators'
 import * as loginApi from '../features/login/loginApi'
 
+
 function App(): JSX.Element {
   const dispatch = useDispatch();
   
   const authChecked = useSelector(selectAuthChecked)
-
+  
   useEffect(() => {
     loginApi.checkUser().then((result) => {
       dispatch(userChecked(result.isLoggedIn ? result.user : undefined));
@@ -27,6 +28,7 @@ function App(): JSX.Element {
      apiStatic.loadStaticUsers().then((loadStaticUsers) => 
      dispatch({ type: 'static/loadStaticUsers', payload: loadStaticUsers }));
    }, [dispatch]);
+
 
    if(!authChecked) {
     return (

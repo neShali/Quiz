@@ -24,14 +24,21 @@ export default function OneQuestionView({
   const handleOpen = (): void => setOpen(true);
   const handleClose = (): void => {
     setOpen(false);
-    setDisable(true);
+    // setDisable(true);
+    dispatch<Action>({
+      type: 'themes/changeQuestion',
+      payload: { id: Number(question.id), themeId: Number(question.theme_id) },
+    });
   };
+  // console.log(question.answered);
 
   const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = (
     event,
   ) => {
     setInput(event.target.value);
   };
+
+  console.log(question);
 
   const handlerAnswer: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
@@ -59,11 +66,15 @@ export default function OneQuestionView({
         size="large"
         variant="outlined"
         onClick={handleOpen}
-        disabled={disable}
+        // disabled={disable}
+        disabled={question.answered}
         color="secondary"
+        sx={{
+          width: 100,
+          height: 100,
+        }}
       >
         {question.points}
-
       </Button>
 
       <div>
@@ -74,20 +85,25 @@ export default function OneQuestionView({
           aria-describedby="modal-modal-description"
         >
           <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
             sx={{
               // eslint-disable-next-line @typescript-eslint/prefer-as-const
               position: 'absolute' as 'absolute',
               top: '50%',
               left: '50%',
               transform: 'translate(-50%, -50%)',
-              width: 400,
+              width: 700,
+              height: 400,
               bgcolor: 'background.paper',
-                // border: '2px solid #000',
-                boxShadow: 24,
-                p: 4,
-                backgroundColor: '#9c27b0',
-                textAlign: 'center',
-                color: 'white'
+              // border: '2px solid #000',
+              boxShadow: 24,
+              p: 4,
+              backgroundColor: '#9c27b0',
+              textAlign: 'center',
+              color: 'white',
             }}
           >
             <Typography id="modal-modal-title" variant="h6" component="h2">
@@ -96,12 +112,11 @@ export default function OneQuestionView({
             {answerShow ? (
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                 {answer}
-
               </Typography>
             ) : (
               <form onSubmit={handlerAnswer}>
                 <input value={inputText} onChange={handleInputChange} />
-                <Button type="submit" color="error">
+                <Button type="submit" variant="outlined" color="inherit">
                   Узнать ответ
                 </Button>
               </form>

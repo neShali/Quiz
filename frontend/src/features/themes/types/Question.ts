@@ -4,6 +4,7 @@ type Question = {
   question: string;
   answer: string;
   points: number;
+  answered?: boolean;
 };
 
 export default Question;

@@ -8,7 +8,7 @@
     "dev": "nodemon app.js -e js,jsx,css,json --ignore sessions",
     "build": "node db/sync.js",
     "start": "node app.js",
-    "dbr": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all"
+    "dbr": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.21"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",

@@ -38,8 +38,14 @@ function Themes(): JSX.Element {
           justifyContent="center"
           style={{ minHeight: '30vh' }}
         >
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            sx={{ fontSize: 48, color: 'violet', fontWeight: 'bold', textAlign: 'center', verticalAlign: 'center', margin: '0px 10px 0px 0px' }}
+          >
             {theme.title}
+
           </Typography>
           {theme.questions.map(
             (el: Question): JSX.Element => (

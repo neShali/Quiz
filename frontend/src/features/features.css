@@ -12,3 +12,8 @@
     margin: auto;
     margin-top: 200px
 }
+
+.table {
+    margin: 50px;
+    border: 1px solid black;
+}

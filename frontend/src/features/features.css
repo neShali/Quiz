@@ -1,0 +1,48 @@
+*{
+    font-family: 'Szlichta';
+}
+
+.loginForm {
+    width: 600px;
+    /* margin: auto; */
+    margin: 50px auto ;
+}
+
+.info {
+    margin-top: 300px;
+}
+
+.restList {
+    width: 600px;
+    margin: auto;
+    margin-top: 200px
+}
+
+
+.font-szlichta {
+    font-family: "Szlichta";
+  }
+  
+  
+  @font-face {
+    font-family: Szlichta;
+    src: url('../../public/fonts/Szlichta.ttf') format('ttf'),
+      url('../../public/fonts/Szlichta.woff') format('woff');
+  }
+
+  .table {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+td {
+    padding: 10px;
+}
+
+.login{
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+}

@@ -11,6 +11,7 @@ import { RootState } from '../store';
 
 function Layout(): JSX.Element {
   const score = useSelector((state: RootState) => state.themes.score);
+  const user = useSelector((state: RootState) => state.login.user);
 
   const navigate = useNavigate();
 
@@ -27,6 +28,9 @@ function Layout(): JSX.Element {
               <Link style={{ color: 'white' }} to="/">
                 Квиз
               </Link>
+              <span style={{ marginLeft: '50px' }}>
+                {user && `Привет, ${user.name}`}
+              </span>
             </Typography>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Ваш счёт: {score}

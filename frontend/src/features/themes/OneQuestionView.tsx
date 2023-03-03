@@ -1,4 +1,4 @@
-import { Typography, Box, Button, Modal, TextField } from '@mui/material';
+import { Typography, Box, Button, Modal } from '@mui/material';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Action from './types/Action';
@@ -16,7 +16,7 @@ export default function OneQuestionView({
   const [answerShow, setAnswerShow] = useState(false);
   // строка ответа
   const [answer, setAnswer] = useState('');
-
+  // инпут для ответа
   const [inputText, setInput] = useState('');
 
   const dispatch = useDispatch();

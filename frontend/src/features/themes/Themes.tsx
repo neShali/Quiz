@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Grid, Typography } from '@mui/material';
+import { Grid, Typography, Button } from '@mui/material';
 import OneQuestionView from './OneQuestionView';
 import { RootState } from '../../store';
 import * as themesApi from './api';
@@ -9,7 +10,15 @@ import Question from './types/Question';
 
 function Themes(): JSX.Element {
   const themes = useSelector((state: RootState) => state.themes.themesList);
+  const points = useSelector((state: RootState) => state.themes.score);
+
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleCloseGame = (): void => {
+    console.log(points);
+    navigate('/');
+  };
 
   useEffect(() => {
     themesApi.loadThemes().then((t) => {
@@ -18,7 +27,7 @@ function Themes(): JSX.Element {
   }, [dispatch]);
 
   return (
-    <div>
+    <Grid container alignItems="center" justifyContent="center">
       {themes.map((theme: Theme) => (
         <Grid
           container
@@ -39,7 +48,10 @@ function Themes(): JSX.Element {
           )}
         </Grid>
       ))}
-    </div>
+      <Button type="button" color="error" onClick={handleCloseGame}>
+        Закончить игру
+      </Button>
+    </Grid>
   );
 }
 

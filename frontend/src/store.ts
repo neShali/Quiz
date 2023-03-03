@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import loginReducer from './features/login/loginReducer';
-import reducer from './features/themes/themesReducer';
+import themesReducer from './features/themes/themesReducer';
 
 // store - хранит объект с данными
 // store.dispatch - функция для применения экшена
@@ -19,8 +19,8 @@ const store = createStore(
   combineReducers({
     // ключ - название раздела (feature)
     // значение - сам редьюсер
-   login: loginReducer
-    
+    login: loginReducer,
+    themes: themesReducer,
   }),
   composeWithDevTools(),
 );

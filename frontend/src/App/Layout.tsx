@@ -6,8 +6,12 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store';
 
 function Layout(): JSX.Element {
+  const score = useSelector((state: RootState) => state.themes.score);
+
   const navigate = useNavigate();
 
   const handlerLogin = (): void => {
@@ -23,6 +27,9 @@ function Layout(): JSX.Element {
               <Link style={{ color: 'white' }} to="/">
                 Квиз
               </Link>
+            </Typography>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              Ваш счёт: {score}
             </Typography>
             <Button color="inherit" onClick={handlerLogin}>
               Login

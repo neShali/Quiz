@@ -24,6 +24,9 @@ function Layout(): JSX.Element {
               <Link style={{ color: 'white', fontSize: 50, textShadow: '3px 3px 3px gray', textDecorationLine: 'none', letterSpacing: '5px' }} to="/">
                 Квиз
               </Link>
+              <Link style={{ color: 'white', margin: 10 }} to="/static">
+                Статистика
+              </Link>
             </Typography>
             <Button color="inherit" onClick={handlerLogin} sx={{ fontSize: 24, textShadow: '2px 2px 2px gray' }}>
               Login

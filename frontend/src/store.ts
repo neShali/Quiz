@@ -1,6 +1,7 @@
 import { createStore, combineReducers } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import loginReducer from './features/login/loginReducer';
+import reducerStatic from './features/static/reducerStatic';
 import reducer from './features/themes/themesReducer';
 
 // store - хранит объект с данными
@@ -19,7 +20,8 @@ const store = createStore(
   combineReducers({
     // ключ - название раздела (feature)
     // значение - сам редьюсер
-   login: loginReducer
+   login: loginReducer,
+   static: reducerStatic
     
   }),
   composeWithDevTools(),

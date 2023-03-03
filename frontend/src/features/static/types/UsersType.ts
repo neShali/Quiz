@@ -1,6 +1,6 @@
 type UsersType = {
-    name: number;
-    'Points.score': 0
+    name: string;
+    'Points.score': number,
   };
   
   export default UsersType;

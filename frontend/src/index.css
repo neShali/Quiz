@@ -8,6 +8,26 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: Szlichta,
+  source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* @font-face {
+  font-family: 'Szlichta';
+  src: url('https://fonts.cdnfonts.com/css/szlichta07');
+} */
+
+.font-szlichta {
+  font-family: "Szlichta";
+}
+
+*{
+  font-family: 'Szlichta';
+}
+
+@font-face {
+  font-family: Szlichta;
+  src: url('../public/fonts/Szlichta.ttf') format('ttf'),
+    url('../public/fonts/Szlichta.woff') format('woff');
 }

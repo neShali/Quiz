@@ -44,17 +44,15 @@ const handlerRegistration = (): void => {
               </Link>
 
               <span style={{ marginLeft: '50px' }}>
-                {user && `Привет, ${user.name}`}
+                {user && `Привет, ${user.name.replace(user.name[0], user.name[0].toUpperCase())}`}
               </span>
             </Typography>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Ваш счёт: {score}
-
-              <Link style={{ color: 'white', margin: 10 }} to="/static">
+                {user && `Ваш счёт: ${score}`}
+                {user && <Link style={{ color: 'white', margin: 10 }} to="/static">
                 Статистика
-              </Link>
-
-            </Typography>
+              </Link>}
+              </Typography>
               {user ? 
               <Button color="inherit" onClick={handlerLogout} sx={{ fontSize: 24, textShadow: '2px 2px 2px gray' }}>
               Выйти

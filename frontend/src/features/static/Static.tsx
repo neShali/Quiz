@@ -18,8 +18,8 @@ function Static(): JSX.Element {
         </thead>
         <tbody>
             <tr>
-              <td>1</td>
-              <td>2</td>
+              <td>1111</td>
+              <td>2222</td>
             </tr>
         </tbody>
       </table>

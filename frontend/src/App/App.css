@@ -21,6 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  /* font-size: 40px; */
   color: white;
 }
 
@@ -39,3 +40,5 @@
     transform: skew(0deg) translateX(-200px);
   }
 }
+
+

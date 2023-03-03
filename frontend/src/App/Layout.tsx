@@ -6,8 +6,13 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store';
 
 function Layout(): JSX.Element {
+  const score = useSelector((state: RootState) => state.themes.score);
+  const user = useSelector((state: RootState) => state.login.user);
+
   const navigate = useNavigate();
 
   const handlerLogin = (): void => {
@@ -16,18 +21,28 @@ function Layout(): JSX.Element {
 
   return (
     <div>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-          <Toolbar>
+      <Box sx={{ flexGrow: 1}}>
+        <AppBar position="static" sx={{ flexGrow: 1, backgroundColor: '#8e24aa',}}>
+            {/* backgroundColor: '#8e24aa', height: '100px', }}> */}
+          <Toolbar sx={{height: '100px',}}>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              <Link style={{ color: 'white' }} to="/">
+              <Link style={{ color: 'white', fontSize: 50, textShadow: '3px 3px 3px gray', textDecorationLine: 'none', letterSpacing: '5px' }} to="/">
                 Квиз
               </Link>
+
+              <span style={{ marginLeft: '50px' }}>
+                {user && `Привет, ${user.name}`}
+              </span>
+            </Typography>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              Ваш счёт: {score}
+
               <Link style={{ color: 'white', margin: 10 }} to="/static">
                 Статистика
               </Link>
+
             </Typography>
-            <Button color="inherit" onClick={handlerLogin}>
+            <Button color="inherit" onClick={handlerLogin} sx={{ fontSize: 24, textShadow: '2px 2px 2px gray' }}>
               Login
             </Button>
           </Toolbar>

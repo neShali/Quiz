@@ -1,6 +1,7 @@
 import { createStore, combineReducers } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import loginReducer from './features/login/loginReducer';
+import themesReducer from './features/themes/themesReducer';
 import reducerStatic from './features/static/reducerStatic';
 import reducer from './features/themes/themesReducer';
 
@@ -20,9 +21,10 @@ const store = createStore(
   combineReducers({
     // ключ - название раздела (feature)
     // значение - сам редьюсер
-   login: loginReducer,
-   static: reducerStatic
-    
+    login: loginReducer,
+    themes: themesReducer,
+    static: reducerStatic
+
   }),
   composeWithDevTools(),
 );

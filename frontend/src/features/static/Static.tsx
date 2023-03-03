@@ -5,22 +5,28 @@ import "../features.css"
 
 function Static(): JSX.Element {   
 
-  const users = useSelector((state: RootState) => state.static.usersList);
+  const users = useSelector((state: RootState) => state.static.usersList.sort((a, b) => b['Points.score'] - a['Points.score']));
 
-//    console.log(users);
 
   return (
-     <table className="table">
-     <tr> 
-      <td width="200" valign="top">Имя игрока:</td>
-      <td width="200" valign="top">Счёт:</td>
-     </tr>
-     <tr className="userTable">
+    <div className="table">
+     <table >
+     <thead style={{width: 100}}>
+      <tr>
+        <th>Имя игрока:</th>
+        <th>Счёт:</th>
+      </tr>
+    </thead>
+    <tbody>
      {users.map((user)=> 
-       <div className="usersInfo"><td>{user.name}</td><td>{user['Points.score']}</td></div>
+      <tr key={user.id}>
+      <td>{user.name}</td>
+      <td>{user['Points.score']}</td>
+      </tr>
     )}
-    </tr>
+    </tbody>
     </table>
+    </div>
   )
 }
 

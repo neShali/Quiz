@@ -23,6 +23,9 @@ function Layout(): JSX.Element {
               <Link style={{ color: 'white' }} to="/">
                 Квиз
               </Link>
+              <Link style={{ color: 'white', margin: 10 }} to="/static">
+                Статистика
+              </Link>
             </Typography>
             <Button color="inherit" onClick={handlerLogin}>
               Login

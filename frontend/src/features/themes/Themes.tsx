@@ -34,7 +34,7 @@ function Themes(): JSX.Element {
     >
       <Grid
         container
-        alignItems="stretch"
+        alignItems="center"
         justifyContent="center"
         sx={{ backgroundColor: '#282828' }}
       >

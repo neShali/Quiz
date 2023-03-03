@@ -45,12 +45,12 @@ const handleSubmit = (event: React.FormEvent): void => {
 return (
 <Form onSubmit={handleSubmit}>
       <Form.Group  className="mb-3 mt-5 loginForm" controlId="formBasicEmail">
-        <h2>Регистрация</h2>
-        <input type="text" value={name} onChange={handleNameChange} placeholder="Введите ваше имя" />
-        <input type="email" value={email} onChange={handleEmailChange} placeholder="Введите вашу почту" />
-        <input type="password1" value={password1} onChange={handlePassword1Change} placeholder="Введите ваш пароль" />
-        <input type="password2" value={password2} onChange={handlePassword2Change} placeholder="Повторите пароль" />
-      <Button variant="secondary mt-3" type="submit">
+        <h2 className="login">Регистрация</h2>
+        <input type="text" value={name} onChange={handleNameChange} placeholder="Введите ваше имя" style={{ width: '600px', fontSize: '30px' }}/>
+        <input type="email" value={email} onChange={handleEmailChange} placeholder="Введите вашу почту" style={{ width: '600px', fontSize: '30px' }}/>
+        <input type="password1" value={password1} onChange={handlePassword1Change} placeholder="Введите ваш пароль" style={{ width: '600px', fontSize: '30px' }}/>
+        <input type="password2" value={password2} onChange={handlePassword2Change} placeholder="Повторите пароль" style={{ width: '600px', fontSize: '30px' }}/>
+      <Button variant="secondary mt-3" type="submit" style={{ width: '600px', fontSize: '30px' }} >
          Готово
       </Button>
       </Form.Group>

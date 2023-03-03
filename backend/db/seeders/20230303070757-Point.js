@@ -12,11 +12,11 @@ module.exports = {
       },
       {
         user_id: 2,
-        score: 0,
+        score: 100,
       },
       {
         user_id: 3,
-        score: 0,
+        score: 30,
       },
     ]);
   },

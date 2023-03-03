@@ -4,6 +4,7 @@ import loginReducer from './features/login/loginReducer';
 import themesReducer from './features/themes/themesReducer';
 import reducerStatic from './features/static/reducerStatic';
 
+
 // store - хранит объект с данными
 // store.dispatch - функция для применения экшена
 

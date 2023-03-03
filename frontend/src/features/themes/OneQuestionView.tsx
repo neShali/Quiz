@@ -38,10 +38,10 @@ export default function OneQuestionView(): JSX.Element {
                 color: 'white'
               }}
             >
-              <Typography id="modal-modal-title" variant="h6" component="h2" sx={{ fontSize: 36, }}>
+              <Typography id="modal-modal-title" variant="h6" component="h2" sx={{ fontSize: 36, fontFamily: 'Szlichta', }}>
                 Вопрос
               </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2, fontSize: 22, }}>
+              <Typography id="modal-modal-description" sx={{ mt: 2, fontSize: 22, fontFamily: 'Szlichta'}}>
                 Ответ
               </Typography>
             </Box>

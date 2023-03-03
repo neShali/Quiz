@@ -20,7 +20,7 @@ function Themes(): JSX.Element {
             gutterBottom
             variant="h5"
             component="div"
-            sx={{ fontSize: 48, color: 'violet', fontWeight: 'bold', textAlign: 'center', verticalAlign: 'center', margin: '0px 10px 0px 0px' }}
+            sx={{ fontSize: 48, fontFamily: 'Szlichta', fontStyle: 'bold', color: 'violet', fontWeight: 'bold', textAlign: 'center', verticalAlign: 'center', margin: '0px 10px 0px 0px' }}
           >
             {t}
           </Typography>

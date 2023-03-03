@@ -16,3 +16,14 @@
     margin: auto;
     margin-top: 200px
 }
+
+.font-szlichta {
+    font-family: "Szlichta";
+  }
+  
+  
+  @font-face {
+    font-family: Szlichta;
+    src: url('../../public/fonts/Szlichta.ttf') format('ttf'),
+      url('../../public/fonts/Szlichta.woff') format('woff');
+  }

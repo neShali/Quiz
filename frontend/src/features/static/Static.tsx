@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
+import "../features.css"
 
 function Static(): JSX.Element {   
 
@@ -9,20 +10,17 @@ function Static(): JSX.Element {
 //    console.log(users);
 
   return (
-    <table className="table">
-        <thead>
-          <tr>
-            <th scope="col">Имя пользователя:</th>
-            <th scope="col">Счёт:</th>
-          </tr>
-        </thead>
-        <tbody>
-            <tr>
-              <td>1111</td>
-              <td>2222</td>
-            </tr>
-        </tbody>
-      </table>
+     <table className="table">
+     <tr> 
+      <td width="200" valign="top">Имя игрока:</td>
+      <td width="200" valign="top">Счёт:</td>
+     </tr>
+     <tr className="userTable">
+     {users.map((user)=> 
+       <div className="usersInfo"><td>{user.name}</td><td>{user['Points.score']}</td></div>
+    )}
+    </tr>
+    </table>
   )
 }
 

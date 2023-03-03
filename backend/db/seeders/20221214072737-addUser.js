@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt');
 const { User } = require('../models');
 
 /** @type {import('sequelize-cli').Migration} */
@@ -7,17 +8,17 @@ module.exports = {
       {
         name: 'John Doe',
         email: 'J@D.com',
-        password: '12345678',
+        password: await bcrypt.hash('12345678', 10)
       },
       {
         name: 'John Lennon',
         email: 'Yoko@mylove@com',
-        password: '12345678',
+        password: await bcrypt.hash('12345678', 10),
       },
       {
         name: 'John Snow',
         email: 'i@dontnothing.com',
-        password: '12345678',
+        password: await bcrypt.hash('12345678', 10),
       },
     ]);
   },

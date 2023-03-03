@@ -67,8 +67,8 @@ export default function OneQuestionView({
         sx={{
           fontSize: 40,
           fontFamily: 'Szlichta',
-          // width: '150px',
-          // height: '150px',
+          width: '150px',
+          height: '150px',
           fontWeight: 'bold',
           letterSpacing: '2px',
           border: '3px #9c27b0 solid',
@@ -114,6 +114,7 @@ export default function OneQuestionView({
                 fontSize: 36,
                 fontFamily: 'Szlichta',
                 margin: '5px 0px 10px 0px',
+                // width: '150px',
               }}
             >
               {question.question}

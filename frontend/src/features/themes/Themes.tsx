@@ -38,8 +38,8 @@ function Themes(): JSX.Element {
     >
       <Grid
         container
-        alignItems="stretch"
-        justifyContent="center"
+        alignItems="center"
+        justifyContent="space-around"
         sx={{ backgroundColor: '#282828' }}
       >
         {themes.map((theme: Theme) => (
@@ -60,7 +60,7 @@ function Themes(): JSX.Element {
               variant="h5"
               component="div"
               sx={{
-                maxWidth: '300px',
+                width: '300px',
                 fontSize: 48,
                 fontFamily: 'Szlichta',
                 fontStyle: 'bold',
@@ -80,16 +80,18 @@ function Themes(): JSX.Element {
             )}
           </Grid>
         ))}
-        <Button
-          type="button"
-          size="large"
-          variant="outlined"
-          color="secondary"
-          onClick={handleCloseGame}
-          style={{ marginBottom: '100px' }}
-        >
-          Закончить игру
-        </Button>
+
+              <Button
+        type="button"
+        size="large"
+        variant="outlined"
+        color="secondary"
+        onClick={handleCloseGame}
+        style={{ marginBottom: '100px' , marginTop: '100px'}}
+      >
+        Закончить игру
+      </Button>
+
       </Grid>
     </div>
   );
